@@ -1,6 +1,7 @@
 import './index.css'
 import styled from "@emotion/styled";
 import ImagenCripto from './assets/img/imagen-criptos.png'
+import Formulario from './components/Formulario'; 
 
 const Heading = styled.h1`
     font-family: 'Lato', sans-serif;
@@ -49,6 +50,8 @@ function App() {
             />
             <div>
                 <Heading>Cotiza Criptomonedas al instante</Heading>
+
+                <Formulario/>
 
             </div>
         </Contenedor>
