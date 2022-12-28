@@ -5,8 +5,14 @@ const ShowInfo = styled.div`
     color:#fff;
     font-family: 'Lato', sans-serif;
     display: flex;
+    width: 100%;
+    justify-content:center;
     align-items: center;
     gap: 1rem;
+    @media (max-width: 990px) {
+        flex-direction: column;
+        width: 100%;
+    }
     `
 const Texto = styled.p`
     font-size:18px;

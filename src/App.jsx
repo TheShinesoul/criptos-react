@@ -23,23 +23,38 @@ const Heading = styled.h1`
         display: block;
         margin: 10px auto 0px auto;
     }
+
+    @media (max-width: 767px) {
+        margin-top: 10px;
+    }
 `
 
 const Imagen = styled.img`
     max-width:400px;
     width:80%;
     margin: 100px auto 0 auto;
-    display:block;`
+    display:block;
+    @media (max-width: 767px) {
+        width: auto;
+        height: 200px;
+        margin: 10px auto 10px auto;
+    }`
 
 const Contenedor = styled.div`
     max-width:900px;
     margin:0 auto;
     width:90%;
-    @media (min-width: 992px) {
+    @media (min-width: 767px) {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: 1fr 1fr;
         column-gap: 2rem;
     }`
+
+const ContenedorInfo = styled.div`
+    grid-column:1 / span 2;
+    display:flex;
+    justify-content:center;
+    margin-top:2rem;`
 
 function App() {
 
@@ -81,12 +96,15 @@ function App() {
                     setMonedas={setMonedas}
                 />
 
-                {cargando && <Spinner/>}
-
-                { resultado.PRICE && <Resultado resultado={resultado} />}               
 
 
             </div>
+            <ContenedorInfo>
+
+                {cargando && <Spinner/>}
+
+                { resultado.PRICE && <Resultado resultado={resultado} />}               
+            </ContenedorInfo>
         </Contenedor>
     )
 }
